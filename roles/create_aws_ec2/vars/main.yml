@@ -1,0 +1,14 @@
+ec2_params:
+  instance_type: t2.micro
+  image: ami-0d5eff06f840b45e9
+  region: us-east-1
+  security_group_name: default
+  subnet: subnet-0b01387d
+  key_name: GL_Basecamp_ansible_key
+  count: 3
+
+default_inventory_groups:
+  - all
+  - ungrouped
+
+inventory_groups: "{{ groups.keys() | list | difference (default_inventory_groups) }}"

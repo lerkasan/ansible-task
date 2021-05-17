@@ -1,0 +1,4 @@
+---
+- name: Fetch distro info
+  debug:
+    msg: Host is {{ ansible_hostname }}. OS is {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}

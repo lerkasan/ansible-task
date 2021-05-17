@@ -1,0 +1,15 @@
+[all:vars]
+ansible_user=ec2-user
+
+[web]
+ec2-3-84-179-140.compute-1.amazonaws.com
+
+[ftp]
+ec2-54-197-1-107.compute-1.amazonaws.com
+
+[proxy]
+ec2-54-242-131-195.compute-1.amazonaws.com
+
+[iaas:children]
+web
+ftp

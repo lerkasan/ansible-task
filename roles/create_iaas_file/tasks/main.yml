@@ -1,0 +1,9 @@
+---
+- name: Create a file /etc/iaas
+  block:
+    - file:
+        path: "{{ iaas_file_path }}"
+        state: touch
+        mode: 0500
+  become: yes
+  become_user: root

@@ -1,0 +1,8 @@
+---
+- hosts: iaas
+  roles:
+    - create_iaas_file
+
+- hosts: all
+  roles:
+    - fetch_distro

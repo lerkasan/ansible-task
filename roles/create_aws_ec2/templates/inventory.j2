@@ -1,0 +1,21 @@
+[all:vars]
+ansible_user=ec2-user
+
+[web]
+{% if ec2 is defined %}
+{{ ec2.instances[0].public_dns_name }}
+{% endif %}
+
+[ftp]
+{% if ec2 is defined %}
+{{ ec2.instances[1].public_dns_name }}
+{% endif %}
+
+[proxy]
+{% if ec2 is defined %}
+{{ ec2.instances[2].public_dns_name }}
+{% endif %}
+
+[iaas:children]
+web
+ftp
